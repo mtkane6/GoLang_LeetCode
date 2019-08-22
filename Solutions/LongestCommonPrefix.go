@@ -1,5 +1,23 @@
 package solutions
 
+/*
+
+-- LongestCommonPrefix(strs []string) string --
+Write a function to find the longest common prefix string amongst an array of strings.
+If there is no common prefix, return an empty string "".
+
+Example 1:
+
+Input: ["flower","flow","flight"]
+Output: "fl"
+Example 2:
+
+Input: ["dog","racecar","car"]
+Output: ""
+Explanation: There is no common prefix among the input strings.
+
+*/
+
 // LongestCommonPrefix returns the longest common prefix string
 func LongestCommonPrefix(strs []string) string {
 	Prefix := ""
@@ -14,23 +32,6 @@ func LongestCommonPrefix(strs []string) string {
 		}
 	}
 	return Prefix
-}
-
-//TwoSum determines if two values equal the target and return their indices
-func TwoSum(nums []int, target int) []int {
-	var sln []int
-	m := make(map[int]int)
-	for i, n := range nums {
-		if compl, ok := m[target-n]; ok {
-			sln = append(sln, compl, i)
-		} else {
-			m[n] = i
-		}
-	}
-	if len(sln) == 0 {
-		sln = append(sln, 0, 0)
-	}
-	return sln
 }
 
 // TreeNode is node for findTarget()
