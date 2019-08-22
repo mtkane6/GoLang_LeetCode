@@ -2,6 +2,11 @@ package solutions
 
 /*
 
+***
+Runtime: 0 ms
+Memory Usage: 2.4 MB
+***
+
 -- LongestCommonPrefix(strs []string) string --
 Write a function to find the longest common prefix string amongst an array of strings.
 If there is no common prefix, return an empty string "".
@@ -32,75 +37,4 @@ func LongestCommonPrefix(strs []string) string {
 		}
 	}
 	return Prefix
-}
-
-// TreeNode is node for findTarget()
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
-// findTarget(BST)
-func findTarget(root *TreeNode, k int) bool {
-	m := make(map[int]int)
-	buildMap(m, root)
-	for key := range m {
-		if _, ok := m[k-key]; ok {
-			return true
-		}
-	}
-	return false
-}
-
-func buildMap(m map[int]int, root *TreeNode) {
-	if root != nil {
-		m[root.Val] = 0
-	}
-	buildMap(m, root.Left)
-	buildMap(m, root.Right)
-}
-
-// IsValid Valid Parentheses ==== 100% faster than all other Go submissions, 50% smaller (2mb)
-func IsValid(s string) bool {
-	var stack = Stack{
-		top: nil,
-		len: 0,
-	}
-	m := map[byte]byte{
-		')': '(',
-		']': '[',
-		'}': '{',
-	}
-	for i := range s {
-		if stack.top != nil && stack.top.val == m[s[i]] && len(m) != 0 {
-			if stack.len > 0 {
-				stack.top = stack.top.prev
-			}
-			stack.len--
-		} else if _, ok := m[s[i]]; ok {
-			return false
-		} else { // add to map and to stack
-			stack.top = &node{
-				val:  s[i],
-				prev: stack.top,
-			}
-			stack.len++
-		}
-	}
-	if stack.len == 0 {
-		return true
-	}
-	return false
-}
-
-// Stack is the stack struct
-type Stack struct {
-	top *node
-	len int
-}
-
-type node struct {
-	val  byte
-	prev *node
 }

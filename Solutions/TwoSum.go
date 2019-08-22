@@ -2,6 +2,11 @@ package solutions
 
 /*
 
+***
+Runtime: 4 ms
+Memory Usage: 3.8 MB
+***
+
 -- TwoSum(nums []int, target int) []int --
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
