@@ -21,10 +21,33 @@ func main() {
 	// fmt.Println(t)
 
 	// Longest Common Prefix
-	var a = []string{
-		"aa",
-		"a",
+	// var a = []string{
+	// 	"aa",
+	// 	"a",
+	// }
+	// t := s.LongestCommonPrefix(a)
+	// fmt.Println(t)
+
+	// MergeTwoLists
+	var l1 = s.ListNode{
+		Val: 1,
+		Next: &s.ListNode{
+			Val: 2,
+			Next: &s.ListNode{
+				Val: 4,
+			},
+		},
 	}
-	t := s.LongestCommonPrefix(a)
-	fmt.Println(t)
+
+	var l2 = s.ListNode{
+		Val: 1,
+		Next: &s.ListNode{
+			Val: 3,
+			Next: &s.ListNode{
+				Val: 4,
+			},
+		},
+	}
+	result := s.MergeTwoLists(&l1, &l2)
+	fmt.Printf("%+v", result)
 }
