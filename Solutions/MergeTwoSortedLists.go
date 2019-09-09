@@ -1,5 +1,10 @@
 package solutions
 
+/*
+Runtime: 0 ms, faster than 100.00% of Go online submissions for Merge Two Sorted Lists.
+Memory Usage: 2.5 MB, less than 64.29% of Go online submissions for Merge Two Sorted Lists.
+*/
+
 // ListNode is the Definition for singly-linked list.
 type ListNode struct {
 	Val  int
